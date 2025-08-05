@@ -342,12 +342,16 @@ const plantillas = {
 
   // --- FUNCIONES DE LOGIN Y REGISTRO ---
   async function validarRegistro() {
+    const boton = event.target;
+    desactivarBotonTemporalmente(boton);
+
     const division = document.getElementById("division").value;
     const equipo = document.getElementById("equipo").value;
-    const dni1 = document.getElementById("dni1").value;
-const dni2 = document.getElementById("dni2").value;
-const dni3 = document.getElementById("dni3").value;
-const dni4 = document.getElementById("dni4").value;
+    const dni1 = document.getElementById("dni1").value.padStart(8, '0');
+    const dni2 = document.getElementById("dni2").value.padStart(8, '0');
+    const dni3 = document.getElementById("dni3").value.padStart(8, '0');
+    const dni4 = document.getElementById("dni4").value.padStart(8, '0');
+
     const errorP = document.getElementById("errorRegistro");
 
     if (!division || !equipo) {
@@ -355,23 +359,23 @@ const dni4 = document.getElementById("dni4").value;
       return;
     }
     
-    // Aquí puedes mantener tu lógica para verificar si el equipo ya existe
-// 1) Pregunto si ya existe hoy este equipo:
-const resCheck = await fetch(
-  `${URL_SCRIPT}?tipo=validarRegistro` +
-  `&division=${encodeURIComponent(division)}` +
-  `&equipo=${encodeURIComponent(equipo)}`
-);
-const dataCheck = await resCheck.json();
+    // 1) Pregunto si ya existe hoy este equipo:
+    const resCheck = await fetch(
+      `${URL_SCRIPT}?tipo=validarRegistro` +
+      `&division=${encodeURIComponent(division)}` +
+      `&equipo=${encodeURIComponent(equipo)}`
+    );
 
-if (dataCheck.existe) {
-  const msg = document.getElementById("registroMensaje");
-  msg.textContent = `⚠️ El equipo "${equipo}" ya fue registrado hoy.`;
-  msg.style.display = "block";
-  return;
-}
+    const dataCheck = await resCheck.json();
 
-// 2) Si no existe, continúa aquí con tu fetch POST para guardar el equipo  
+    if (dataCheck.existe) {
+      const msg = document.getElementById("registroMensaje");
+      msg.textContent = `⚠️ El equipo "${equipo}" ya fue registrado hoy.`;
+      msg.style.display = "block";
+      return;
+    }
+
+    // 2) Si no existe entonces... 
     const payload = { tipo: "registro", division, equipo, dni1, dni2, dni3, dni4 };
 
     try {
@@ -380,10 +384,9 @@ if (dataCheck.existe) {
       if (data.status === "success") {
         equipoActual = { division, equipo }; // Guarda los datos del equipo
         mostrarVista('vista-retos');
-setTimeout(() => {
-  obtenerRetosCompletados(equipoActual.division, equipoActual.equipo);
-}, 10); // Espera 10 milisegundos
-
+        setTimeout(() => {
+        obtenerRetosCompletados(equipoActual.division, equipoActual.equipo);
+        }, 10); // Espera 10 milisegundos
       } else {
         errorP.textContent = `Error: ${data.message}`;
       }
@@ -410,9 +413,9 @@ setTimeout(() => {
       if (data.status === "success") {
         equipoActual = { division, equipo }; // Guarda los datos del equipo
         mostrarVista('vista-retos');
-setTimeout(() => {
-  obtenerRetosCompletados(equipoActual.division, equipoActual.equipo);
-}, 10); // Espera 10 milisegundos
+        setTimeout(() => {
+        obtenerRetosCompletados(equipoActual.division, equipoActual.equipo);
+      }, 10); // Espera 10 milisegundos
 
       } else {
         errorP.textContent = `⚠️ ${data.message}`;
@@ -438,6 +441,9 @@ setTimeout(() => {
 
 
   async function enviarEntrega() {
+    const boton = event.target;
+    desactivarBotonTemporalmente(boton);
+
     const enlace = document.getElementById("enlaceEntrega").value.trim();
     if (!enlace) {
       alert("Debes ingresar un enlace válido.");
@@ -509,8 +515,20 @@ async function obtenerRetosCompletados() {
   }
 }
 
+function desactivarBotonTemporalmente(boton, tiempo = 10000) { // Para evitar que dupliquen envíos
+  boton.disabled = true;
+  boton.style.opacity = "0.6";
+  boton.style.cursor = "not-allowed";
+  setTimeout(() => {
+    boton.disabled = false;
+    boton.style.opacity = "1";
+    boton.style.cursor = "pointer";
+  }, tiempo);
+}
 </script>
 </body>
 </html>
+</html>
+
 
 
