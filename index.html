@@ -7,31 +7,84 @@
   <meta name="robots" content="noindex,nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escuela de Ventas - Pandero</title>
-  <link rel="icon" type="image/png" href="https://www.pandero.com.pe/favicon.ico" />
+  <link rel="icon" type="image/png" href="./img/pandero-favicon.png" />
   <style>
     /* Estilos Generales y de Login */
-    body { font-family: Arial, sans-serif; background-color: #f0f0f0; color: #333; margin: 0; padding: 0; }
-    header { background-color: 
-#0047bb; color: white; padding: 1rem; display: flex; justify-content: space-between; align-items: center; }
-    header img { height: 40px; }
-    .container { max-width: 600px; margin: auto; padding: 1rem; }
-    h1, h2 { color: 
-#0047bb; }
-    button { background-color: 
-#0047bb; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; margin: 5px 0; font-size: 1rem;}
-    input, select { width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box; }
-    .hidden { display: none; }
-    a { color: 
-#0047bb; text-decoration: underline; }
+    body { 
+      font-family: Arial, sans-serif; 
+      background-color: #f0f0f0; 
+      color: #333; 
+      margin: 0; 
+      padding: 0; 
+    }
+    header { 
+      background-color: #0047bb; 
+      color: white; 
+      padding: 1rem; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    header img { 
+      height: 40px; 
+    }
+    .container { 
+      max-width: 600px; 
+      margin: auto; 
+      padding: 1rem; 
+    }
+    h1, h2 { 
+      color: #0047bb; 
+    }
+    button { 
+      background-color: #0047bb; 
+      color: white; 
+      padding: 10px 15px; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      margin: 5px 0; 
+      font-size: 1rem;
+    }
+    input, select { 
+      width: 100%; 
+      padding: 8px; 
+      margin-bottom: 10px; 
+      box-sizing: border-box; 
+    }
+    .hidden { 
+      display: none; 
+    }
+    a { 
+      color: #0047bb; 
+      text-decoration: underline; 
+    }
 
     /* Estilos de Retos */
-    .reto-btn { width: 100%; padding: 1rem; margin: 0.5rem 0; }
-    .reto-btn.disabled { background: gray !important; cursor: not-allowed; }
-    .enviar { background: green; padding: 0.5rem 1rem; }
-    .volver { margin-top: 1rem; background: #5A6B7A; }
-    .insignia { text-align: center; }
-    .insignia img {  width: 250px;
-  max-width: 100%; }
+    .reto-btn { 
+      width: 100%; 
+      padding: 1rem; 
+      margin: 0.5rem 0; 
+    }
+    .reto-btn.disabled { 
+      background: gray !important; 
+      cursor: not-allowed; 
+    }
+    .enviar { 
+      background: green; 
+      padding: 0.5rem 1rem; 
+    }
+    .volver { 
+      margin-top: 1rem; 
+      background: #5A6B7A; 
+    }
+    .insignia { 
+      text-align: center; 
+    }
+    .insignia img {  
+      width: 250px; 
+      max-width: 100%; 
+    }
 
 #botonesRetos {
   display: flex;
@@ -54,7 +107,6 @@
   <div><strong>Escuela de Ventas</strong></div>
   <img src="./img/pandero.png" alt="Logo Pandero" style="height: 40px;" />
 </header>
-
 
   <div class="container">
     <div id="vista-inicio">
@@ -191,46 +243,46 @@ const recursos = {
     <p>Revisa y estudia cuidadosamente el sistema y el contrato que se encuentran en estos enlaces.</p>
     <ul>
         <li><a href="https://star.pandero.com.pe/course/view.php?id=148" target="_blank">Sistema Pandero</a></li>
-        <li><a href="https://drive.google.com/file/d/1Y9CSjTp3htY_bOp9ad0Cf2RqAP8w1CBk/view?usp=sharing" target="_blank">Contrato</a></li>
+        <li><a href="docs/Contrato_sin_Valor_C6.pdf" target="_blank">Contrato</a></li>
     </ul>
   `,
   2: `
     <p>Escucha el audio completo para entender más sobre el tipo de contratos, toma nota de los puntos importantes, lo necesitarás para derrotar a las fuerzas oscuras de Sylon</p>
     <audio controls style="width: 100%;">
-      <source src="https://vermillion-eclair-9afd4e.netlify.app/solo-audio.mp3" type="audio/mpeg">
+      <source src="audios/reto2.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
     </audio>
   `,
   3: `<p>Elabora y adapta un discurso comercial para darle seguridad al cliente (escribe un guión). Graba un video y compartelo por redes sociales o por el grupo de whatsapp.</p>
 <ul>
-        <li><a href="https://drive.google.com/file/d/1Y9CSjTp3htY_bOp9ad0Cf2RqAP8w1CBk/view?usp=sharing" target="_blank">Contrato</a></li>
+        <li><a href="docs/Contrato_sin_Valor_C6.pdf" target="_blank">Contrato</a></li>
     </ul>
 `
 ,
   4: `<p>Escucha dos ventas: una falla, otra brilla. Analiza bien... y ayúdanos a vencer a SYLON con lo que aprendas.</p>
 	<p>Caso 1:</p>
     <audio controls style="width: 100%;">
-      <source src="https://keen-starship-639f6a.netlify.app/caso%201.mp3" type="audio/mpeg">
+      <source src="audios/caso1.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
     </audio>
 	<p>Caso 2:</p>
     <audio controls style="width: 100%;">
-      <source src="https://superb-swan-8f466b.netlify.app/caso-2.mp3" type="audio/mpeg">
+      <source src="audios/caso2.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
     </audio>
 `,
   5: `<p>Revisa y estudia cuidadosamente el proceso de tramitación, crea un guión y graba un video. Luego comparte el video por el grupo de Whatsapp</p>
     <ul>
-        <li><a href="https://drive.google.com/file/d/1mJwN46EJDtlz5qd0LFb6GFfgY7IQbGCg/view?usp=sharing" target="_blank">Tramitación</a></li>
+        <li><a href="docs/3_La_Tramitación_del_vehículo_Auto_2025.pdf" target="_blank">Tramitación</a></li>
     </ul>
 `,
   6: `<p>Lee la siguiente presentación y utilizalo para inspirarte. Vence a SYLON con el poder de las redes sociales. Postea tu video en Instagram o Tiktok y luego copia el enlace.</p>
 <ul>
-        <li><a href="https://drive.google.com/file/d/1vuqJHHqr9UCFT4UemJqmMTuAQN7BkJxi/view?usp=sharing" target="_blank">Proceso de ventas</a></li>
+        <li><a href="docs/4_Proceso_de_Ventas_Auto_2025.pdf" target="_blank">Proceso de ventas</a></li>
     </ul>`,
   7: `<p>El app es tu comando, el portal está activo. Ya conoces las herramientas, ahora debes usarlas en tiempo real. Demuestra que puedes cerrar un proceso con precisión y eficiencia.</p>
 <ul>
-        <li><a href="https://drive.google.com/file/d/1h3zQ6gpmyFQVRNUHvT56NKQ5XEGnMqgx/view?usp=sharing" target="_blank">App de ventas</a></li>
+        <li><a href="docs/6_App_de_ventas_2025.pdf" target="_blank">App de ventas</a></li>
     </ul>`,
   8: `<p>El reto final está aquí. Crea un catálogo visual con los vehículos más vendidos en Pandero incluyendo imágenes y descripciones.</p>`,
 };
@@ -288,7 +340,7 @@ const plantillas = {
   
   window.onload = () => mostrarVista('vista-inicio');
 
-  // --- FUNCIONES DE LOGIN Y REGISTRO (MODIFICADAS) ---
+  // --- FUNCIONES DE LOGIN Y REGISTRO ---
   async function validarRegistro() {
     const division = document.getElementById("division").value;
     const equipo = document.getElementById("equipo").value;
@@ -319,9 +371,7 @@ if (dataCheck.existe) {
   return;
 }
 
-// 2) Si no existe, continúa aquí con tu fetch POST para guardar el equipo
-
-    
+// 2) Si no existe, continúa aquí con tu fetch POST para guardar el equipo  
     const payload = { tipo: "registro", division, equipo, dni1, dni2, dni3, dni4 };
 
     try {
@@ -333,7 +383,6 @@ if (dataCheck.existe) {
 setTimeout(() => {
   obtenerRetosCompletados(equipoActual.division, equipoActual.equipo);
 }, 10); // Espera 10 milisegundos
-
 
       } else {
         errorP.textContent = `Error: ${data.message}`;
@@ -363,8 +412,7 @@ setTimeout(() => {
         mostrarVista('vista-retos');
 setTimeout(() => {
   obtenerRetosCompletados(equipoActual.division, equipoActual.equipo);
-}, 100); // Espera 100 milisegundos
-
+}, 10); // Espera 10 milisegundos
 
       } else {
         errorP.textContent = `⚠️ ${data.message}`;
@@ -463,5 +511,4 @@ async function obtenerRetosCompletados() {
 
 </script>
 </body>
-
 </html>
