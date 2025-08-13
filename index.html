@@ -127,17 +127,26 @@ Cada reto que completes será una victoria contra el sistema frío e impersonal.
     <div id="vista-registro" class="hidden">
       <h2>Registro del equipo</h2>
       <input type="hidden" id="division" value="Auto" />
-<p><strong>División:</strong> Auto</p>
-<!-- Mensaje específico del registro -->
-<div id="registroMensaje" style="
-  display: none;
-  color: #c00;
-  margin-bottom: 10px;
-  font-weight: bold;
-"></div>
+      <p><strong>División:</strong> Auto</p>
+      <!-- Mensaje específico del registro -->
+      <div id="registroMensaje" style="
+        display: none;
+        color: #c00;
+        margin-bottom: 10px;
+        font-weight: bold;
+      "></div>
 
       <label>Nombre del equipo</label>
-      <select id="equipo"><option value="">Selecciona</option><option>Halcones</option><option>Titanes</option><option>Fénix</option><option>Centellas</option><option>Jaguares</option><option>Dragones</option></select>
+      <select id="equipo">
+        <option value="">Selecciona</option>
+        <option>Halcones</option>
+        <option>Titanes</option>
+        <option>Fénix</option>
+        <option>Centellas</option>
+        <option>Jaguares</option>
+        <option>Dragones</option>
+      </select>
+      <label>Asegurate de escribir correctamente tu DNI</label>
       <label>DNI integrante 1</label><input id="dni1" maxlength="8" />
       <label>DNI integrante 2</label><input id="dni2" maxlength="8" />
       <label>DNI integrante 3</label><input id="dni3" maxlength="8" />
@@ -150,30 +159,29 @@ Cada reto que completes será una victoria contra el sistema frío e impersonal.
     <div id="vista-login" class="hidden">
       <h2>Accede a tu equipo</h2>
       <input type="hidden" id="divisionLogin" value="Auto" /> 
-<p><strong>División:</strong> Auto</p>
+      <p><strong>División:</strong> Auto</p>
 
       <label>Nombre del equipo</label>
       <select id="equipoLogin"><option value="">Selecciona</option><option>Halcones</option><option>Titanes</option><option>Fénix</option><option>Centellas</option><option>Jaguares</option><option>Dragones</option></select>
-	<label>Contraseña</label>
-<input id="claveLogin" type="password" />
+	    <label>Contraseña</label>
+      <input id="claveLogin" type="password" />
 
       <button onclick="validarIngreso()">Entrar</button>
       <button class="volver" onclick="mostrarVista('vista-inicio')">Volver</button>
       <p id="errorIngreso" style="color: red;"></p>
     </div>
 
-	
     <div id="vista-retos" class="hidden">
       <h2>📜 Misiones contra SYLON</h2>
-<p>Completa cada reto para desbloquear el poder de la Venta Humana y derrotar a SYLON.</p>
+      <p>Completa cada reto para desbloquear el poder de la Venta Humana y derrotar a SYLON.</p>
 
-	<div id="barra-contenedor" style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-  	<div style="flex-grow: 1; background-color: #ccc; border-radius: 8px; height: 20px; overflow: hidden;">
-    	<div id="barra-progreso" style="width: 0%; height: 100%; background-color: #4CAF50;"></div>
- 	 </div>
- 	 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/1200px-Five-pointed_star.svg.png" 
+	  <div id="barra-contenedor" style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+  	  <div style="flex-grow: 1; background-color: #ccc; border-radius: 8px; height: 20px; overflow: hidden;">
+    	  <div id="barra-progreso" style="width: 0%; height: 100%; background-color: #4CAF50;"></div>
+ 	  </div>
+ 	  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/1200px-Five-pointed_star.svg.png" 
   	     alt="Estrella" style="width: 24px; height: 24px;" />
-	</div>
+	  </div>
 
       <div id="botonesRetos">
         <button class="reto-btn" data-reto="1" onclick="abrirReto(1)">Reto 1</button>
@@ -193,23 +201,21 @@ Cada reto que completes será una victoria contra el sistema frío e impersonal.
       <p id="descripcionReto"></p>
       	<p id="instruccionRecursos" style="font-style: italic; color: #555;"></p>
 
-<h3>Recursos para completar el reto:</h3>
-<div id="recursosReto"></div>
-
-<p id="instruccionPlantilla" style="font-style: italic; color: #555;"></p>
-
-<h3>Plantilla a completar:</h3>
-<div id="plantillaReto"></div>
-      <label>Pega aquí el enlace de tu entrega:</label>
+    <h3>Recursos para completar el reto:</h3>
+    <div id="recursosReto"></div>
+    <p id="instruccionPlantilla" style="font-style: italic; color: #555;"></p>
+    <h3>Plantilla a completar:</h3>
+    <div id="plantillaReto"></div>
+      <label id="labelEntrega">Pega aquí el enlace de tu entrega:</label>
       <input type="url" id="enlaceEntrega" placeholder="https://..." />
       <button class="enviar" onclick="enviarEntrega()">📤 Enviar enlace</button>
       <button class="volver" onclick="mostrarVista('vista-retos')">Volver a Misiones</button>
     </div>
 
-    <div id="vista-insignia" class="hidden insignia">
-  <p>¡Reto superado! ⭐ Has derrotado una parte del sistema de SYLON.</p>
-  <img id="img-insignia" src="" alt="Insignia del reto">
-</div>
+        <div id="vista-insignia" class="hidden insignia">
+      <p>¡Reto superado! ⭐ Has derrotado una parte del sistema de SYLON.</p>
+      <img id="img-insignia" src="" alt="Insignia del reto">
+    </div>
 
 
 <script>
@@ -220,11 +226,11 @@ Cada reto que completes será una victoria contra el sistema frío e impersonal.
   let retoActual = 0;
 
  const descripciones = {
-  1: "🧠 Desenmascarar a SYLON con conocimiento humano\n\nSYLON confunde a las personas con tecnicismos vacíos. Tu misión es recuperar la confianza del cliente explicándole qué es Pandero y cómo funciona.\nUsa el contrato y el sistema como tus armas",
+  1: "🧠 Desenmascarar a SYLON con conocimiento humano\n\nSYLON confunde a las personas con tecnicismos vacíos. Tu misión es recuperar la confianza del cliente explicándole qué es Pandero y cómo funciona.\nUsa el contrato y el sistema como tus armas. \nTendrán <b>2 horas</b> para completar este <b>reto grupal</b>.",
   
-  2: "🎲 Hackea el algoritmo: entiende todas las características de los contratos.\n\nSYLON se aprovecha de los clientes que no entienden sobre su contrato.\nDesactiva la duda, activa la claridad.",
+  2: "🎲 Hackea el algoritmo: entiende todas las características de los contratos.\n\nSYLON se aprovecha de los clientes que no entienden sobre su contrato.\nDesactiva la duda, activa la claridad. Tendrán <b>45 minutos</b> para completar este <b>reto grupal</b>.",
   
-  3: "❤️ Conectar con el miedo\n\nSYLON quiere que el cliente se sienta solo si deja de pagar.\nTu reto es explicar con empatía qué ocurre en ese caso.\nNo vendas miedo: vende acompañamiento. Usa el contrato como escudo.",
+  3: "❤️ Conectar con el miedo\n\nSYLON quiere que el cliente se sienta solo y con dudas.\nTu reto es manejar sus objeciones, el cliente se pregunta: ¿Qué pasa si no pago?, ¿Por qué elegir Pandero?, ¿No me brindan una fecha de entrega? Explica con claridad y empatía qué ocurre en ese caso.\nNo vendas miedo: vende acompañamiento. Usa el contrato como escudo. \nTendrán <b>1 hora</b> para completar este <b>reto individual</b>.",
   
   4: "🚗 Una serie de registros ha llegado a tus manos. Voces, tonos, silencios... Debes entrenar tu percepción para detectar qué hace que una llamada triunfe (o fracase). Serás observador y juez, mentor y aprendiz.",
   
@@ -240,22 +246,35 @@ Cada reto que completes será una victoria contra el sistema frío e impersonal.
 
 const recursos = {
   1: `
-    <p>Revisa y estudia cuidadosamente el sistema y el contrato que se encuentran en estos enlaces.</p>
+    <p>Revisa y completa el curso sobre el sistema Pandero y lee cuidadosamente el contrato, para ello debes ingresar a los siguientes enlaces:</p>
     <ul>
-        <li><a href="https://star.pandero.com.pe/course/view.php?id=148" target="_blank">Sistema Pandero</a></li>
-        <li><a href="docs/Contrato_sin_Valor_C6.pdf" target="_blank">Contrato</a></li>
+        <li><a href="https://star.pandero.com.pe/course/view.php?id=148" target="_blank">Curso: Sistema Pandero</a></li>
+        <li><a href="docs/Contrato_sin_Valor_C6.pdf" target="_blank">Contrato C6 4x4</a></li>
+        <li><a href="docs/Contrato_c6-economico.pdf" target="_blank">Contrato C6 económico</a></li>
+        <li><a href="docs/Contrato_C4.pdf" target="_blank">Contrato C4</a></li>
+        <li><a href="docs/Contrato_c9(autos).pdf" target="_blank">Contrato C9</a></li>
     </ul>
   `,
   2: `
-    <p>Escucha el audio completo para entender más sobre el tipo de contratos, toma nota de los puntos importantes, lo necesitarás para derrotar a las fuerzas oscuras de Sylon</p>
+    <p>Escucha el audio completo para entender más sobre el tipo de contratos, toma nota de los puntos importantes, lo necesitarás para derrotar a las fuerzas oscuras de SYLON</p>
     <audio controls style="width: 100%;">
       <source src="audios/reto2.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
     </audio>
+    <p>Aquí tienes los contratos para que los leas y puedas compararlos:</p>
+    <ul>
+      <li><a href="docs/Contrato_sin_Valor_C6.pdf" target="_blank">Contrato C6 4x4</a></li>
+      <li><a href="docs/Contrato_c6-economico.pdf" target="_blank">Contrato C6 económico</a></li>
+      <li><a href="docs/Contrato_C4.pdf" target="_blank">Contrato C4</a></li>
+      <li><a href="docs/Contrato_c9(autos).pdf" target="_blank">Contrato C9</a></li>
+    </ul>
   `,
-  3: `<p>Elabora y adapta un discurso comercial para darle seguridad al cliente (escribe un guión). Graba un video y compartelo por el grupo de whatsapp.</p>
-<ul>
-        <li><a href="docs/Contrato_sin_Valor_C6.pdf" target="_blank">Contrato</a></li>
+  3: `<p>Elabora y adapta un discurso de ventas para darle seguridad al cliente. Tu reto es escribir un guión y grabar un video luego comparte el guion en texto y el video por el grupo de whatsapp.</p>
+    <ul>
+      <li><a href="docs/Contrato_sin_Valor_C6.pdf" target="_blank">Contrato C6 4x4</a></li>
+      <li><a href="docs/Contrato_c6-economico.pdf" target="_blank">Contrato C6 económico</a></li>
+      <li><a href="docs/Contrato_C4.pdf" target="_blank">Contrato C4</a></li>
+      <li><a href="docs/Contrato_c9(autos).pdf" target="_blank">Contrato C9</a></li>
     </ul>
 `
 ,
@@ -288,18 +307,20 @@ const recursos = {
 };
 
 const plantillas = {
-  1: `<p>Ingresa al enlace, regístrate y completa los datos para que puedas vencer a Sylon. Cuando termines de completar todos los campos copia el enlace en modo público.</p>
-      <ul>
+  1: `<ul>
         <li><a href="https://www.canva.com/design/DAGu9GdHilg/aUCzgWPECHPXb2lRgXd14w/view?utm_content=DAGu9GdHilg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">Plantilla en Canva</a></li>
-      </ul>`,
-  2: `<p>Ingresa al enlace de la división que perteneces y completa el recuadro para que puedas vencer a Sylon. Cuando termines de completar todos los campos copia el enlace en modo público.</p>
-      <ul>
+      </ul>
+      <p>Ingresa al enlace de arriba, regístrate y completa los datos de la plantilla para que puedas vencer a SYLON. Cuando termines de completar todos los campos, copia desde Canva el enlace en modo público y pégalo en el recuadro blanco de la parte inferior de esta página.</p>
+      `,
+  2: `<ul>
         <li><a href="https://www.canva.com/design/DAGu-dKCOf4/7ubPsNfp2anED-j9hP2Clw/view?utm_content=DAGu-dKCOf4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">Concesionario Lima</a></li>
         <li><a href="https://www.canva.com/design/DAGu-q-yRx8/RnaHFUqbsVAdwMBUHaa4Zg/view?utm_content=DAGu-q-yRx8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">Concesionario Provincia</a></li>
-        <li><a href="https://www.canva.com/design/DAGu-tw0fKI/E-k131MudryJoZPf0ydbGg/view?utm_content=DAGu-tw0fKI&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">Auto Lima</a></li>
-        <li><a href="https://www.canva.com/design/DAGu-vLhkQ4/yGLwEgguytSGVBx3URUWgw/view?utm_content=DAGu-vLhkQ4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">Auto Provincia</a></li>
-      </ul>`,
-  3: `<p>Este reto no tiene plantilla… porque tú eres quien debe crearla. ¿Serás capaz de improvisar sin una guía? La decisión (y la gloria) es toda tuya.</p>`,
+        <li><a href="https://www.canva.com/design/DAGu-q-yRx8/RnaHFUqbsVAdwMBUHaa4Zg/view?utm_content=DAGu-q-yRx8&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">AutoLima</a></li>
+        <li><a href="https://www.canva.com/design/DAGu-vLhkQ4/yGLwEgguytSGVBx3URUWgw/view?utm_content=DAGu-vLhkQ4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">AutoProvincia</a></li>
+      </ul>
+      <p>Ingresa al enlace <b>del producto al que perteneces</b> y completa el recuadro para que puedas vencer a SYLON. Cuando termines de completar todos los campos, copia desde Canva el enlace en modo público y pégalo en el recuadro blanco de la parte inferior de esta página.</p>
+      `,
+  3: `<p>Este reto no tiene plantilla… porque tú eres quien debe crearla. ¿Serás capaz de ganarle a SYLON? La decisión (y la gloria) es toda tuya.</p>`,
 4: `<p>Ingresa al enlace y completa el recuadro para que puedas vencer a Sylon. Cuando termines de completar todos los campos copia el enlace en modo público.</p>
 <ul>
         <li><a href="https://www.canva.com/design/DAGu-7zLLwY/2B4dGixTbhohwH6bg6jQ5Q/view?utm_content=DAGu-7zLLwY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">Plantilla en Canva</a></li>
@@ -317,6 +338,22 @@ const plantillas = {
 <ul>
         <li><a href="https://www.canva.com/design/DAGu_Fg83mY/D071hyIr7cZxPBxysIQmdg/view?utm_content=DAGu_Fg83mY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview" target="_blank">Plantilla en Canva</a></li>
       </ul>`,
+};
+
+const textosEntrega = {
+  1: { 
+    label: "Pega aquí el enlace de tu entrega:", 
+    placeholder: "https://..."
+  },
+  2: { 
+    label: "Comparte aquí el link del video:", 
+    placeholder: "https://..."
+  },
+  3: { 
+    label: "Coloca el enlace a tu guión o archivo:", 
+    placeholder: "https://..."
+  },
+  // Puedes agregar más retos y cambiar el texto según necesites
 };
 
    const insignias = {
@@ -341,7 +378,7 @@ const plantillas = {
   window.onload = () => mostrarVista('vista-inicio');
 
   // --- FUNCIONES DE LOGIN Y REGISTRO ---
-  async function validarRegistro() {
+    async function validarRegistro() {
     const boton = event.target;
     desactivarBotonTemporalmente(boton);
 
@@ -390,7 +427,7 @@ const plantillas = {
       } else {
         errorP.textContent = `Error: ${data.message}`;
       }
-    } catch (err) {
+      } catch (err) {
       errorP.textContent = "Error de conexión.";
     }
   }
@@ -430,15 +467,22 @@ const plantillas = {
   retoActual = n;
 
   document.getElementById("tituloReto").textContent          = "Reto " + n;
-  document.getElementById("descripcionReto").textContent     = descripciones[n]           || "";
+  document.getElementById("descripcionReto").innerHTML       = descripciones[n]           || "";
   //document.getElementById("instruccionRecursos").textContent = instruccionesRecursos[n]   || "";
   document.getElementById("recursosReto").innerHTML          = recursos[n]                || "<p>No hay recursos aún.</p>";
   //document.getElementById("instruccionPlantilla").textContent= instruccionesPlantilla[n]  || "";
   document.getElementById("plantillaReto").innerHTML         = plantillas[n]              || "<p>No hay plantilla aún.</p>";
+    if (textosEntrega[n]) {
+      document.getElementById("labelEntrega").textContent = textosEntrega[n].label;
+      document.getElementById("enlaceEntrega").placeholder = textosEntrega[n].placeholder;
+    } else {
+      // Valores por defecto si el reto no está definido en textosEntrega
+      document.getElementById("labelEntrega").textContent = "Pega aquí el enlace de tu entrega:";
+      document.getElementById("enlaceEntrega").placeholder = "https://...";
+    }
   document.getElementById("enlaceEntrega").value = "";
   mostrarVista('vista-reto-detalle');
 }
-
 
   async function enviarEntrega() {
     const boton = event.target;
@@ -467,9 +511,8 @@ const plantillas = {
 if (insigniaImg && insignias[retoActual]) {
   insigniaImg.src = insignias[retoActual];
 }
-mostrarVista('vista-insignia');
 
-        
+mostrarVista('vista-insignia');
         // Deshabilita el botón del reto completado
         const btns = document.querySelectorAll("#botonesRetos .reto-btn");
         if (btns[retoActual - 1]) {
@@ -528,8 +571,6 @@ function desactivarBotonTemporalmente(boton, tiempo = 10000) { // Para evitar qu
 </script>
 </body>
 </html>
-</html>
-
 
 
 
